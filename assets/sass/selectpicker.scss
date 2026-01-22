@@ -5,7 +5,85 @@
 */
 .ts-dropdown {
     z-index: 1056;
+}
 
+/* Tag filters unified display */
+.tag-filters-container {
+    .tag-filters-display {
+        margin-bottom: 0.5rem;
+        margin-left: auto;
+        width: 66.67%; /* Match col-sm-8 width */
+    }
+
+    .tag-filters-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.375rem;
+    }
+
+    .tag-chip {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.125rem 0.5rem;
+        border-radius: 0.75rem;
+        font-size: 0.75rem;
+        line-height: 1.4;
+        font-weight: 500;
+        cursor: default;
+
+        .tag-chip-color {
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            margin-right: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        .tag-chip-icon {
+            margin-right: 0.125rem;
+            font-size: 0.875rem;
+            line-height: 1;
+            font-weight: bold;
+        }
+
+        .tag-chip-name {
+            max-width: 120px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .tag-chip-remove {
+            margin-left: 0.375rem;
+            cursor: pointer;
+            opacity: 0.6;
+            font-size: 0.875rem;
+            line-height: 1;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        /* Include tags - primary/blue style */
+        &.tag-chip-include {
+            background-color: var(--tblr-primary);
+            color: #fff;
+        }
+
+        /* Exclude tags - danger/red style with minus indicator */
+        &.tag-chip-exclude {
+            background-color: var(--tblr-danger);
+            color: #fff;
+        }
+    }
+
+    /* When unified display is active, hide TomSelect items (they show in unified area instead) */
+    &.tag-filters-active ~ .row .ts-control {
+        .item {
+            display: none;
+        }
+    }
 }
 
 /* Tabler defines a min-width of 7rem, what makes many input fields become a two-line field

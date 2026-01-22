@@ -158,6 +158,10 @@
         <source>tags</source>
         <target state="final">Etichette</target>
       </trans-unit>
+      <trans-unit id="excTags1" resname="excludeTags">
+        <source>excludeTags</source>
+        <target>Escludi etichette</target>
+      </trans-unit>
       <trans-unit id="JGaf9IK" resname="Doctor" approved="yes">
         <source>Doctor</source>
         <target state="final">Medico</target>

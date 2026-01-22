@@ -644,6 +644,16 @@ class TimesheetRepository extends EntityRepository
                 ->setParameter('tags', $tags);
         }
 
+        $excludeTags = $query->getExcludeTags();
+        if (\count($excludeTags) > 0) {
+            $excludeSubQuery = $this->createQueryBuilder('te')
+                ->select('te.id')
+                ->innerJoin('te.tags', 'ext')
+                ->where('ext IN (:excludeTags)');
+            $qb->andWhere($qb->expr()->notIn('t.id', $excludeSubQuery->getDQL()))
+                ->setParameter('excludeTags', $excludeTags);
+        }
+
         $requiresTeams = $this->addPermissionCriteria($qb, $query->getCurrentUser(), $query->getTeams());
 
         $configuration = new SearchConfiguration(

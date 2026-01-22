@@ -142,6 +142,10 @@
         <source>tags</source>
         <target>Tagi</target>
       </trans-unit>
+      <trans-unit id="excTags1" resname="excludeTags">
+        <source>excludeTags</source>
+        <target>Wyklucz tagi</target>
+      </trans-unit>
       <trans-unit id="JGaf9IK" resname="Doctor">
         <source>Doctor</source>
         <target>Diagnostyka</target>

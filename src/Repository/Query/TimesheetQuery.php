@@ -42,6 +42,10 @@ class TimesheetQuery extends ActivityQuery implements BillableInterface, DateRan
      */
     private array $tags = [];
     /**
+     * @var array<Tag>
+     */
+    private array $excludeTags = [];
+    /**
      * @var array<User>
      */
     private array $users = [];
@@ -61,6 +65,7 @@ class TimesheetQuery extends ActivityQuery implements BillableInterface, DateRan
             'state' => self::STATE_ALL,
             'billable' => null,
             'tags' => [],
+            'excludeTags' => [],
             'users' => [],
             'activities' => [],
         ]);
@@ -242,6 +247,26 @@ class TimesheetQuery extends ActivityQuery implements BillableInterface, DateRan
     public function addTag(Tag $tag): void
     {
         $this->tags[$tag->getId()] = $tag;
+    }
+
+    /**
+     * @return array<Tag>
+     */
+    public function getExcludeTags(): array
+    {
+        return array_values($this->excludeTags);
+    }
+
+    public function removeExcludeTag(Tag $tag): void
+    {
+        if (isset($this->excludeTags[$tag->getId()])) {
+            unset($this->excludeTags[$tag->getId()]);
+        }
+    }
+
+    public function addExcludeTag(Tag $tag): void
+    {
+        $this->excludeTags[$tag->getId()] = $tag;
     }
 
     public function getModifiedAfter(): ?\DateTimeInterface

@@ -122,6 +122,10 @@
         <source>tags</source>
         <target>Mots-clés</target>
       </trans-unit>
+      <trans-unit id="excTags1" resname="excludeTags">
+        <source>excludeTags</source>
+        <target>Exclure mots-clés</target>
+      </trans-unit>
       <trans-unit id="Vz3Igj3" resname="error.no_entries_found">
         <source>error.no_entries_found</source>
         <target>Aucune entrée n'a été trouvée avec les filtres sélectionnés.</target>

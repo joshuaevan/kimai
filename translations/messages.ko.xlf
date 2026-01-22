@@ -126,6 +126,10 @@
         <source>tags</source>
         <target state="translated">태그</target>
       </trans-unit>
+      <trans-unit id="excTags1" resname="excludeTags">
+        <source>excludeTags</source>
+        <target>태그 제외</target>
+      </trans-unit>
       <trans-unit id="Vz3Igj3" resname="error.no_entries_found">
         <source>error.no_entries_found</source>
         <target state="translated">선택한 필터를 기반으로 한 항목을 찾을 수 없습니다.</target>

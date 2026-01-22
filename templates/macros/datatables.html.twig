@@ -39,6 +39,42 @@
                 {% if filterCount > 0 %}<span class="badge badge-notification bg-primary text-primary-fg ms-1 d-none d-sm-inline">{{ filterCount }}</span>{% endif %}
             </button>
             <div class="dropdown-menu p-3 search-dropdown" data-popper-placement="bottom-start" aria-labelledby="search-dropdown-btn">
+                {# Render fields before tags: dateRange, customer, project, activity #}
+                {% if form.dateRange is defined %}{{ form_row(form.dateRange) }}{% endif %}
+                {% if form.customer is defined %}{{ form_row(form.customer) }}{% endif %}
+                {% if form.project is defined %}{{ form_row(form.project) }}{% endif %}
+                {% if form.activity is defined %}{{ form_row(form.activity) }}{% endif %}
+                
+                {# Tag filters section - between activity and records #}
+                {% if form.tags is defined and form.excludeTags is defined %}
+                    {% set tagsRowHasError = form.tags.vars.errors|length > 0 or form.excludeTags.vars.errors|length > 0 %}
+                    {% set includePlaceholder = 'include'|trans({}, 'messages')|default('Include') %}
+                    {% set excludePlaceholder = 'exclude'|trans({}, 'messages')|default('Exclude') %}
+                    {# Active tag filters display #}
+                    <div class="tag-filters-container" data-tags-select="#{{ form.tags.vars.id }}" data-exclude-tags-select="#{{ form.excludeTags.vars.id }}">
+                        <div class="tag-filters-display" style="display: none;">
+                            <div class="tag-filters-chips"></div>
+                        </div>
+                    </div>
+                    {# Tag selectors row #}
+                    <div class="mb-2 row{% if tagsRowHasError %} is-invalid{% endif %}">
+                        {{ form_label(form.tags) }}
+                        <div class="col-sm-8">
+                            <div class="row g-2">
+                                <div class="col-6">
+                                    {{ form_widget(form.tags, {attr: {'data-placeholder': includePlaceholder, 'placeholder': includePlaceholder}}) }}
+                                    {{ form_errors(form.tags) }}
+                                </div>
+                                <div class="col-6">
+                                    {{ form_widget(form.excludeTags, {attr: {'data-placeholder': excludePlaceholder, 'placeholder': excludePlaceholder}}) }}
+                                    {{ form_errors(form.excludeTags) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                
+                {# Render remaining fields (records, billable, exported, etc.) #}
                 {{ form_rest(form) }}
                 <div class="mb-2 row {% if orderHasError %} is-invalid{% endif %} ">
                     {{ form_label(form.orderBy) }}

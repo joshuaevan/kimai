@@ -43,6 +43,7 @@ import KimaiHotkeys from "./plugins/KimaiHotkeys";
 import KimaiRemoteModal from "./plugins/KimaiRemoteModal";
 import KimaiUser from "./plugins/KimaiUser";
 import KimaiAutocompleteTags from "./forms/KimaiAutocompleteTags";
+import KimaiTagFilters from "./forms/KimaiTagFilters";
 
 export default class KimaiLoader {
 
@@ -72,6 +73,7 @@ export default class KimaiLoader {
         kimai.registerPlugin(new KimaiDatePicker('input[data-datepicker="on"]'));
         kimai.registerPlugin(new KimaiAutocomplete());
         kimai.registerPlugin(new KimaiAutocompleteTags());
+        kimai.registerPlugin(new KimaiTagFilters('.tag-filters-container'));
         kimai.registerPlugin(new KimaiTimesheetForm());
         kimai.registerPlugin(new KimaiTeamForm());
         kimai.registerPlugin(new KimaiCopyDataForm());

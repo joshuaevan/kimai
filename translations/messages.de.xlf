@@ -238,6 +238,22 @@
         <source>tags</source>
         <target>Schlagworte</target>
       </trans-unit>
+      <trans-unit id="excTags1" resname="excludeTags">
+        <source>excludeTags</source>
+        <target>Schlagworte ausschliessen</target>
+      </trans-unit>
+      <trans-unit id="tagFiltersActive1" resname="tag_filters_active">
+        <source>tag_filters_active</source>
+        <target>Aktive Schlagwort-Filter</target>
+      </trans-unit>
+      <trans-unit id="tagInclude1" resname="include">
+        <source>include</source>
+        <target>Einschließen</target>
+      </trans-unit>
+      <trans-unit id="tagExclude1" resname="exclude">
+        <source>exclude</source>
+        <target>Ausschließen</target>
+      </trans-unit>
       <trans-unit id="JGaf9IK" resname="Doctor">
         <source>Doctor</source>
         <target>Doktor</target>

@@ -35,6 +35,7 @@ final class TimesheetToolbarForm extends AbstractType
         $this->addProjectMultiChoice($builder, $newOptions, true, true);
         $this->addActivityMultiChoice($builder, [], true);
         $this->addTagInputField($builder);
+        $this->addExcludeTagInputField($builder);
         if ($options['include_user']) {
             $this->addUsersChoice($builder);
             $this->addTeamsChoice($builder);

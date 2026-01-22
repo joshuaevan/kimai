@@ -352,6 +352,15 @@ trait ToolbarFormTrait
         ]);
     }
 
+    protected function addExcludeTagInputField(FormBuilderInterface $builder): void
+    {
+        $builder->add('excludeTags', TagsType::class, [
+            'required' => false,
+            'allow_create' => false,
+            'label' => 'excludeTags',
+        ]);
+    }
+
     protected function addSearchTermInputField(FormBuilderInterface $builder): void
     {
         $builder->add('searchTerm', SearchTermType::class);

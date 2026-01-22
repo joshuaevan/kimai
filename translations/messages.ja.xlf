@@ -122,6 +122,10 @@
         <source>tags</source>
         <target>タグ</target>
       </trans-unit>
+      <trans-unit id="excTags1" resname="excludeTags">
+        <source>excludeTags</source>
+        <target>タグを除外</target>
+      </trans-unit>
       <trans-unit id="Vz3Igj3" resname="error.no_entries_found">
         <source>error.no_entries_found</source>
         <target>指定されたフィルタ条件に該当する明細は見付かりませんでした。</target>

@@ -590,6 +590,10 @@
         <source>tags</source>
         <target>الوسوم</target>
       </trans-unit>
+      <trans-unit id="excTags1" resname="excludeTags">
+        <source>excludeTags</source>
+        <target>استبعاد الوسوم</target>
+      </trans-unit>
       <trans-unit id="KhBzpuZ" resname="tag">
         <source>tag</source>
         <target>الوسوم</target>
